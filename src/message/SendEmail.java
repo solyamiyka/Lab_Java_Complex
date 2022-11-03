@@ -18,12 +18,12 @@ public class SendEmail {
         properties.put("mail.smtp.host","smtp.ukr.net");
         properties.put("mail.smtp.port","465");
         properties.put("mail.smtp.ssl.Enable","true");
-        properties.put("mail.smtp.user","solomiialesiv@ukr.net");
+        properties.put("mail.smtp.user","*********@ukr.net");
 
         Authenticator auth = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("solomiialesiv@ukr.net", "***************");
+                return new PasswordAuthentication("*********@ukr.net", "***************");
             }
         };
 
@@ -32,12 +32,12 @@ public class SendEmail {
 
         MimeMessage message = new MimeMessage(session);
 
-        message.setFrom(new InternetAddress("solomiialesiv@ukr.net"));
-        message.setReplyTo(InternetAddress.parse("solomiialesiv@ukr.net", false));
+        message.setFrom(new InternetAddress("*********@ukr.net"));
+        message.setReplyTo(InternetAddress.parse("*********@ukr.net", false));
         message.setSubject("The critical error occurred","ANSI");
         message.setText(error,"ANSI");
 
-        message.setRecipient(Message.RecipientType.TO,new InternetAddress("solomiialesiv@ukr.net"));
+        message.setRecipient(Message.RecipientType.TO,new InternetAddress("*********@ukr.net"));
         Transport.send(message);
         System.out.println("Message was sent successfully...");
 
