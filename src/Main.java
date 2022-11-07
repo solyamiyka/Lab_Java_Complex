@@ -17,8 +17,7 @@ public class Main {
 
         try {
             // Create a file handler object
-            FileHandler handler
-                    = new FileHandler("logs.txt");
+            FileHandler handler = new FileHandler("logs.txt");
             handler.setFormatter(new SimpleFormatter());
 
             // Add file handler as
