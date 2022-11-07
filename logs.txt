@@ -1,16 +1,8 @@
-Nov 03, 2022 6:40:57 PM Main main
+Nov 07, 2022 7:18:28 PM Main main
 INFO: Declaration of variables: Scanner, Console menu
-Nov 03, 2022 6:40:57 PM Main main
+Nov 07, 2022 7:18:28 PM Main main
 INFO: Call the function in which we use menu and select the command
-Nov 03, 2022 6:41:05 PM menu.MainMenu execute
+Nov 07, 2022 7:18:36 PM menu.MainMenu execute
 INFO: Executing command sortAsc
-Nov 03, 2022 6:41:05 PM taxes.Taxes sortTaxes
-INFO: Sorting taxes by size of tax and by ascending
-Nov 03, 2022 6:41:05 PM taxes.Taxes info
-INFO: Printing List of taxes
-Nov 03, 2022 6:41:14 PM menu.MainMenu execute
+Nov 07, 2022 7:18:44 PM menu.MainMenu execute
 INFO: Executing command sortDesc
-Nov 03, 2022 6:41:14 PM taxes.Taxes sortTaxes
-INFO: Sorting taxes by size of tax and by descending
-Nov 03, 2022 6:41:14 PM taxes.Taxes info
-INFO: Printing List of taxes
