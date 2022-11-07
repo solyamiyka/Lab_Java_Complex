@@ -45,7 +45,7 @@ public class MainMenu {
             return;
         }
         logger.info("Executing command " + command);
-        menuItems.get(command).execute(logger);
+        menuItems.get(command).execute();
 
     }
 

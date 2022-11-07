@@ -1,7 +1,6 @@
 package menu;
 
 import taxes.Taxes;
-import java.util.logging.Logger;
 
 public class MenuSearchTaxes implements MenuItem{
     public String type;
@@ -14,8 +13,8 @@ public class MenuSearchTaxes implements MenuItem{
     }
 
     @Override
-    public void execute(Logger logger){
-        new Taxes(logger).searchTaxes(type,a,b, logger);
+    public void execute(){
+        new Taxes().searchTaxes(type,a,b);
     }
 
 }

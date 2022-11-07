@@ -1,18 +1,15 @@
 package menu;
 
-import taxes.Income;
 import taxes.Taxes;
 
-import java.util.ArrayList;
-import java.util.logging.Logger;
 
 public class MenuDefineSum implements MenuItem {
 
 
     @Override
-    public void execute(Logger logger){
+    public void execute(){
 
-        new Taxes(logger).defineSumTaxes(logger);
+        new Taxes().defineSumTaxes();
     }
 
 }
