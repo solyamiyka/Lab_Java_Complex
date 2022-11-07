@@ -4,9 +4,7 @@ public class Income {
 
     private String nameOfIncome;
     private double sizeOfIncome;
-    public double percentageOfTax;
-    public double sizeOfTax;
-
+    public double percentageOfTax, sizeOfTax;
 
     public Income(){}
 
@@ -15,21 +13,13 @@ public class Income {
         this.sizeOfIncome = sizeOfIncome;
     }
 
-    public String getNameOfIncome() {
-        return nameOfIncome;
-    }
-
-    public void setNameOfIncome(String nameOfIncome) {
-        this.nameOfIncome = nameOfIncome;
-    }
+  //  public String getNameOfIncome() { return nameOfIncome;}
+  //  public void setNameOfIncome(String nameOfIncome) { this.nameOfIncome = nameOfIncome; }
 
     public double getSizeOfIncome() {
         return sizeOfIncome;
     }
-
-    public void setSizeOfIncome(double sizeOfIncome) {
-        this.sizeOfIncome = sizeOfIncome;
-    }
+   // public void setSizeOfIncome(double sizeOfIncome) { this.sizeOfIncome = sizeOfIncome;}
 
     public double getSizeOfTax() {
         if (sizeOfTax == 0) {
@@ -37,28 +27,20 @@ public class Income {
         }
         return sizeOfTax;
     }
+   // public void setSizeOfTax(double sizeOfTax) { this.sizeOfTax = sizeOfTax;}
 
-    public void setSizeOfTax(double sizeOfTax) {
-        this.sizeOfTax = sizeOfTax;
-    }
-
-    public double getPercentageOfTax() {
+    public void getPercentageOfTax() {
         if (nameOfIncome.equals("award") || nameOfIncome.equals("main income") ||
                 nameOfIncome.equals("additional income") || nameOfIncome.equals("transfer from abroad") ||
                 nameOfIncome.equals("financial aid")){
 
             percentageOfTax = 19.5;
         }
-        else if (nameOfIncome.equals("sale of property") ||
-                 nameOfIncome.equals("funds as a gift")){
+        else if (nameOfIncome.equals("sale of property") || nameOfIncome.equals("funds as a gift")){
             percentageOfTax = 4.5;
         }
-        return percentageOfTax;
     }
-
-    public void setPercentageOfTax(double percentageOfTax) {
-        this.percentageOfTax = percentageOfTax;
-    }
+    //public void setPercentageOfTax(double percentageOfTax) { this.percentageOfTax = percentageOfTax; }
 
     @Override
     public String toString() {

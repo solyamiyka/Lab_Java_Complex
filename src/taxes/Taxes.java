@@ -6,29 +6,29 @@ import java.util.logging.Logger;
 
 public class Taxes extends Income {
 
-    public List<Income> taxes = new ArrayList<>();
-    public Taxes(){}
-    public Taxes(Logger logger){
-        taxes = createListOfTax(logger);
+    public List<Income> taxes;
+    private static final Logger logger = Logger.getLogger(Taxes.class.getName());
+
+    public Taxes(){
+        taxes = createListOfTax();
     }
 
-
-   public ArrayList<Income> createListOfTax(Logger logger){
+    public List<Income> createListOfTax(){
 
         logger.finest("Creating list of taxes for person");
-        ArrayList<Income> taxes = new ArrayList<>();
+        List<Income> taxes = new ArrayList<>();
 
         Income income1 = new Income("award", 1970.00);
         Income income2 = new Income("main income", 65200.00);
-        Income income3 = new Income("financial aid", 2460.00);
+        Income income3 = new Income("funds as a gift", 2460.00);
 
-        addIncome(taxes, income1,logger);
-        addIncome(taxes, income2,logger);
-        addIncome(taxes, income3,logger);
+        addIncome(taxes, income1);
+        addIncome(taxes, income2);
+        addIncome(taxes, income3);
 
         return taxes;
     }
-    public void addIncome(ArrayList<Income> taxes, Income income, Logger logger){
+    public void addIncome(List<Income> taxes, Income income){
         logger.fine("Getting size of tax by giving income and adding tax information to list of taxes");
         income.getPercentageOfTax();
         income.getSizeOfTax();
@@ -36,7 +36,7 @@ public class Taxes extends Income {
 
     }
 
-    public Set<Double> defineSetTaxes(Logger logger){
+    public Set<Double> defineSetTaxes(){
 
         if (taxes.isEmpty()) {
             logger.info("List of tax is empty");
@@ -55,7 +55,7 @@ public class Taxes extends Income {
         return taxesSet;
     }
 
-    public double defineSumTaxes(Logger logger){
+    public double defineSumTaxes(){
 
         logger.info("Defining sum of tax");
         if (taxes.isEmpty()) {
@@ -71,7 +71,7 @@ public class Taxes extends Income {
 
         return total;
     }
-    public List<Income> sortTaxes(String choice, Logger logger){
+    public List<Income> sortTaxes(String choice){
 
         List<Income> sortedTaxes = new ArrayList<>(taxes);
 
@@ -79,16 +79,15 @@ public class Taxes extends Income {
             logger.info("Sorting taxes by size of tax and by ascending");
             System.out.println("\n Sorted taxes by ascending:");
             sortedTaxes.sort(new ComparatorSortAsc());
-        } else {
+        }  if (Objects.equals(choice, "Desc")) {
             logger.info("Sorting taxes by size of tax and by descending");
             System.out.println("\n Sorted taxes by descending:");
-            sortedTaxes.sort(new ComparatorSortDes());
+            sortedTaxes.sort(new ComparatorSortDesc());
         }
-        info(sortedTaxes, logger);
-
+        info(sortedTaxes);
         return sortedTaxes;
     }
-    public List<Income> searchTaxes(String type, double a, double b, Logger logger){
+    public List<Income> searchTaxes(String type, double a, double b){
 
         if (Objects.equals(type, "ByIncome")){
             logger.info("Searching taxes by income");
@@ -100,7 +99,7 @@ public class Taxes extends Income {
         }
         taxes = filterTaxes(type,a,b);
 
-        info(taxes, logger);
+        info(taxes);
         return taxes;
     }
 
@@ -115,11 +114,10 @@ public class Taxes extends Income {
 
     }
 
-    public void info(List<Income> taxes, Logger logger){
+    public void info(List<Income> taxes){
         logger.info("Printing List of taxes");
         for(int i = 0; i < taxes.size(); i++) {
-        System.out.print((i + 1) + ". " + taxes.get(i).toString() + "\n");
+            System.out.print((i + 1) + ". " + taxes.get(i).toString() + "\n");
         }
     }
-
 }
